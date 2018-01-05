@@ -1,0 +1,5 @@
+#!/bin/bash
+pushd $(dirname $0) >/dev/null
+data_dir="/mnt/docker/appdata/dhcpd/"
+docker run -ti --name dhcpd6 --net host -v "$data_dir":/data njd90/dhcpd6 "$@"
+popd >/dev/null
