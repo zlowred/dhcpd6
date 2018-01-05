@@ -1,5 +1,5 @@
-Docker image for ISC DHCP server
-================================
+Docker image for ISC DHCP server v6
+===================================
 
 This Docker image is suitable for running a DHCP server IPv6 for your docker host
 network.  It uses ISC DHCP server which is bundled with the latest Ubuntu
@@ -57,8 +57,6 @@ This image uses the following software components:
 
 Copyright & License
 ===================
-
-This project is copyright 2017 Robin Smidsrød <robin@smidsrod.no>.
 
 It is licensed under the Apache 2.0 license.
 
