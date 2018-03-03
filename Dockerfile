@@ -4,6 +4,11 @@ MAINTAINER NJD <contact@skyblack.fr>
 
 ARG DEBIAN_FRONTEND=noninteractive
 
+LABEL Description="ISC DHCP server v6" \
+        tags="" \
+        maintainer="NJD <https://github.com/njd90>" \
+        build_ver="201803031030"
+
 RUN apt-get -q -y update \
  && apt-get -q -y -o "DPkg::Options::=--force-confold" -o "DPkg::Options::=--force-confdef" install apt-utils \
  && apt-get -q -y -o "DPkg::Options::=--force-confold" -o "DPkg::Options::=--force-confdef" dist-upgrade \
