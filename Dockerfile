@@ -1,6 +1,6 @@
 FROM ubuntu:oracular
 
-MAINTAINER NJD <mail@maxmatveev.com>
+LABEL org.opencontainers.image.authors=="<mail@maxmatveev.com>"
 
 ARG DEBIAN_FRONTEND=noninteractive
 
@@ -13,13 +13,11 @@ RUN apt-get -q -y update \
  && apt-get -q -y install dumb-init \
  && apt-get -q -y -o "DPkg::Options::=--force-confold" -o "DPkg::Options::=--force-confdef" install apt-utils \
  && apt-get -q -y -o "DPkg::Options::=--force-confold" -o "DPkg::Options::=--force-confdef" dist-upgrade \
- && apt-get -q -y -o "DPkg::Options::=--force-confold" -o "DPkg::Options::=--force-confdef" install isc-dhcp-server man \
+ && apt-get -q -y -o "DPkg::Options::=--force-confold" -o "DPkg::Options::=--force-confdef" install isc-dhcp-server iproute2 \
  && apt-get -q -y autoremove \
- && apt-get -q -y clean \
- && rm -rf /var/lib/apt/lists/*
+ && apt-get -q -y clean
 
 
-#COPY util/dumb-init_1.2.5_x86_64 /usr/bin/dumb-init
 COPY util/entrypoint.sh /entrypoint.sh
 
 ENTRYPOINT ["/entrypoint.sh"]

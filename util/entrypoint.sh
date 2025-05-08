@@ -2,6 +2,7 @@
 
 set -e
 
+[[ -f /data/gen_conf.sh ]] && /bin/bash /data/gen_conf.sh
 
 init="/usr/bin/dumb-init"
 
